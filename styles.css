@@ -47,8 +47,8 @@ header {
 }
 
 .anime-button {
-  background-color: #ff416c;
-  color: white;
+  background-color: #415eff;
+  color: rgb(255, 255, 255);
   border: none;
   padding: 15px 25px;
   font-size: 1.2rem;
@@ -59,22 +59,23 @@ header {
 }
 
 .anime-button:hover {
-  background-color: #ff4b2b;
+  background-color: #ffd6d6;
+  color: black;
   transform: scale(1.1) rotate(3deg);
 }
 
 .anime-button:active {
-  background-color: #ff416c;
+  background-color: #ff4141;
   transform: scale(0.95);
 }
 
 /* Animation Keyframes for Buttons */
 @keyframes button-glow {
   0% {
-    box-shadow: 0 0 10px rgba(255, 65, 108, 0.8);
+    box-shadow: 0 0 10px rgba(68, 65, 255, 0.8);
   }
   100% {
-    box-shadow: 0 0 20px rgba(255, 65, 108, 1);
+    box-shadow: 0 0 20px rgb(65, 163, 255);
   }
 }
 
@@ -84,7 +85,7 @@ header {
 
 /* Footer */
 footer {
-  background-color: #333;
+  background-color: #272727;
   color: white;
   padding: 20px;
   font-size: 1rem;
@@ -147,8 +148,9 @@ footer {
   top: -50px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 2rem;
-  color: #ff416c;
+  font-size: 80px;
+  color: #000000;
+  gap: 20px;
   opacity: 0;
 }
 
