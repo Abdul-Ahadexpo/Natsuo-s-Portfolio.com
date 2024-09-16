@@ -1,0 +1,160 @@
+/* General styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+  text-align: center;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  font-size: 1.8rem;
+}
+
+/* Profile Section */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.profile-info {
+  max-width: 400px;
+}
+
+.profile-info p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.anime-button {
+  background-color: #ff416c;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  margin: 10px;
+}
+
+.anime-button:hover {
+  background-color: #ff4b2b;
+  transform: scale(1.1) rotate(3deg);
+}
+
+.anime-button:active {
+  background-color: #ff416c;
+  transform: scale(0.95);
+}
+
+/* Animation Keyframes for Buttons */
+@keyframes button-glow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 65, 108, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 65, 108, 1);
+  }
+}
+
+.anime-button {
+  animation: button-glow 1s infinite alternate;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    font-size: 1.5rem;
+    padding: 15px;
+  }
+
+  .profile {
+    padding: 15px;
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-info p {
+    font-size: 1rem;
+  }
+
+  .anime-button {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+
+  .profile {
+    padding: 10px;
+  }
+
+  .profile-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-info p {
+    font-size: 0.9rem;
+  }
+
+  .anime-button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Fall animation */
+.falling-text {
+  position: fixed;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #ff416c;
+  opacity: 0;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
