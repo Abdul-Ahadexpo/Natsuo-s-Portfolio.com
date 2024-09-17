@@ -1,5 +1,3 @@
-// new-hw.js
-
 document.addEventListener("DOMContentLoaded", function () {
   const abilities = {
     1: "1. Has all knowledge/Can gain all knowledge",
@@ -75,10 +73,44 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Multiply functionality (just an example, replace with your actual functionality)
+  // Multiply functionality (particle effect)
   multiplyButton.addEventListener("click", function () {
-    alert("This power is under development!");
+    const duration = 8000; // 4 seconds
+    const intervalTime = 500; // Interval to generate new particles
+    let elapsedTime = 0;
+
+    const particleContainer = document.createElement("div");
+    particleContainer.id = "particle-container";
+    document.body.appendChild(particleContainer);
+
+    const particleInterval = setInterval(() => {
+      spawnParticles(particleContainer);
+
+      elapsedTime += intervalTime;
+      if (elapsedTime >= duration) {
+        clearInterval(particleInterval); // Stop generating particles after 4 seconds
+        setTimeout(() => {
+          document.body.removeChild(particleContainer); // Remove the container after particles fade out
+        }, 1000); // Extra 1 second to clear up particles
+      }
+    }, intervalTime); // Generate particles every 500ms
   });
+
+  function spawnParticles(container) {
+    for (let i = 0; i < 50; i++) {
+      // You can adjust the number of particles
+      let particle = document.createElement("div");
+      particle.className = "particle";
+      particle.style.top = Math.random() * window.innerHeight + "px";
+      particle.style.left = Math.random() * window.innerWidth + "px";
+      container.appendChild(particle);
+
+      // Remove particle after animation ends
+      particle.addEventListener("animationend", () => {
+        particle.remove();
+      });
+    }
+  }
 
   // Generate random text
   function generateRandomText() {

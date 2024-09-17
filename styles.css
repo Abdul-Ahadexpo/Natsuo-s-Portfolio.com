@@ -160,3 +160,33 @@ footer {
     opacity: 0;
   }
 }
+/* Particle Effect */
+#particle-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+  animation: particle-expand 2s forwards;
+}
+
+@keyframes particle-expand {
+  0% {
+    transform: scale(0);
+    opacity: 50;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
